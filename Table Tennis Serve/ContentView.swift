@@ -26,7 +26,8 @@ struct ContentView: View {
     @State private var ballVerticalOffset: CGFloat = -100
 
     var body: some View {
-        let imagePath = colorScheme == .dark ? "table-tennis-table-white" : "table-tennis-table" // dark mode support
+        // dark mode support
+        let imagePath = colorScheme == .dark ? "table-tennis-table-white" : "table-tennis-table"
         
         VStack(alignment: .center, spacing: 12) {
             Spacer()
@@ -35,13 +36,13 @@ struct ContentView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 400, height: 450)
-                    
-
+                
                 Spacer()
+                
                 Image("ping_pong_ball_orange")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 30, height: 35)
+                    .frame(width: 30, height: 30)
                     .position(x: -208 + ballHorizontalOffset, y: ballVerticalOffset)
             }
             Spacer()
