@@ -14,8 +14,8 @@ let LOCATION_OPTIONS = ["Inside", "Middle", "Outside"]
 let SERVE_OPTIONS: [String: [String: [String]]] = [
     "Classic Underspin": ["Short": SHORT_SERVE_OPTIONS, "Long": LONG_SERVE_OPTIONS],
     "Sidespin Pendulum": ["Short": SHORT_SERVE_OPTIONS, "Long": LONG_SERVE_OPTIONS],
-    "Tight Chopper ": ["Short": SHORT_SERVE_OPTIONS, "Long": LONG_SERVE_OPTIONS],
-    "Backhand ": ["Short": SHORT_SERVE_OPTIONS, "Long": LONG_SERVE_OPTIONS]
+    "Tight Chopper    ": ["Short": SHORT_SERVE_OPTIONS, "Long": LONG_SERVE_OPTIONS],
+    "Backhand         ": ["Short": SHORT_SERVE_OPTIONS, "Long": LONG_SERVE_OPTIONS]
 ]
 
 struct ContentView: View {

@@ -10,7 +10,6 @@
 		BA4131412BB1192300EFB7C3 /* Table_Tennis_ServeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4131402BB1192300EFB7C3 /* Table_Tennis_ServeApp.swift */; };
 		BA4131432BB1192300EFB7C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4131422BB1192300EFB7C3 /* ContentView.swift */; };
 		BA4131452BB1192400EFB7C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4131442BB1192400EFB7C3 /* Assets.xcassets */; };
-		BA4131512BB1250C00EFB7C3 /* table-tennis-table.svg in Resources */ = {isa = PBXBuildFile; fileRef = BA4131502BB1250C00EFB7C3 /* table-tennis-table.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +17,6 @@
 		BA4131402BB1192300EFB7C3 /* Table_Tennis_ServeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table_Tennis_ServeApp.swift; sourceTree = "<group>"; };
 		BA4131422BB1192300EFB7C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BA4131442BB1192400EFB7C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BA4131502BB1250C00EFB7C3 /* table-tennis-table.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "table-tennis-table.svg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +52,6 @@
 				BA4131422BB1192300EFB7C3 /* ContentView.swift */,
 				BA4131402BB1192300EFB7C3 /* Table_Tennis_ServeApp.swift */,
 				BA4131442BB1192400EFB7C3 /* Assets.xcassets */,
-				BA4131502BB1250C00EFB7C3 /* table-tennis-table.svg */,
 			);
 			path = "Table Tennis Serve";
 			sourceTree = "<group>";
@@ -117,7 +114,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4131512BB1250C00EFB7C3 /* table-tennis-table.svg in Resources */,
 				BA4131452BB1192400EFB7C3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
