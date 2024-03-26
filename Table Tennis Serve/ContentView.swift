@@ -41,7 +41,7 @@ struct ContentView: View {
                     Image(systemName: "paintpalette.fill")
                         .font(.system(size: 28))
                         .padding(.trailing, 20)
-                        .foregroundColor(chosenColor)
+                        .foregroundColor(colorScheme == .dark && chosenColor == .black  ? .white : chosenColor)
                 }
             }
             .sheet(isPresented: $showColorPicker) {
@@ -84,8 +84,8 @@ struct ContentView: View {
                     .fontWeight(.bold)
                     .font(.system(size: 24))
                     .padding(20)
-                    .foregroundColor(Color.white)
-                    .background(Color(chosenColor))
+                    .foregroundColor(colorScheme == .dark || chosenColor == .black || chosenColor == .white ? .black : .white)
+                    .background(chosenColor == .black ? .white : chosenColor)
                     .cornerRadius(10)
             }
             .padding(.bottom, 10)
