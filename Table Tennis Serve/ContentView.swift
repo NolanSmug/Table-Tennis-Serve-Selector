@@ -24,10 +24,10 @@ struct ContentView: View {
     @State private var selectedServe = ""
     
     // set image starter positions
-    @State private var ballHorizontalOffset: CGFloat = -50
-    @State private var ballVerticalOffset: CGFloat = 350
+    @State private var ballHorizontalOffset: CGFloat = 0
+    @State private var ballVerticalOffset: CGFloat = 1000
     
-    @State private var paddleHorizontalPosition: CGFloat = 100
+    @State private var paddleHorizontalPosition: CGFloat = 192
     
 
     var body: some View {
