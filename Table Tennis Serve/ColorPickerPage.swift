@@ -33,8 +33,7 @@ struct ColorPickerView: View {
             
             ScrollView {
                 LazyVGrid(columns: Array(repeating: GridItem(), count: 3), spacing: 20) {
-                    ForEach(colors, id: \.self) { color in
-                        ColorBox(color: color, selectedColor: $selectedColor, showColorPicker: $showColorPicker)
+                    ForEach(colors, id: \.self) { color in ColorBox(color: color, selectedColor: $selectedColor, showColorPicker: $showColorPicker)
                             .frame(width: 60, height: 60)
                             .cornerRadius(10)
                             .padding(5)
