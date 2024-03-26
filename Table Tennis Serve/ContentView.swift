@@ -22,17 +22,22 @@ struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     
     @State private var selectedServe = ""
+    
     @State private var ballHorizontalOffset: CGFloat = 0
     @State private var ballVerticalOffset: CGFloat = -100
+    
+    @State private var paddleHorizontalPosition: CGFloat = 100
+    
 
     var body: some View {
         // dark mode support
-        let imagePath = colorScheme == .dark ? "table-tennis-table-white" : "table-tennis-table"
+        let tableImagePath = colorScheme == .dark ? "table-tennis-table-white" : "table-tennis-table"
+        let paddleImagePath = colorScheme == .dark ? "paddle_white" : "paddle_black"
         
         VStack(alignment: .center, spacing: 12) {
             Spacer()
             HStack(spacing: 0) {
-                Image(imagePath)
+                Image(tableImagePath)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 400, height: 450)
@@ -45,6 +50,11 @@ struct ContentView: View {
                     .frame(width: 30, height: 30)
                     .position(x: -208 + ballHorizontalOffset, y: ballVerticalOffset)
             }
+            Image(paddleImagePath)
+                .resizable()
+                .scaledToFit()
+                .frame(width:75,height:75)
+                .position(x:paddleHorizontalPosition)
             Spacer()
             HStack {
                 Text(selectedServe)
@@ -87,11 +97,21 @@ struct ContentView: View {
         
         switch selectedServeDistance {
             case "Short":
-                ballVerticalOffset = 200
+                ballVerticalOffset = 90
             case "Long":
-                ballVerticalOffset = 80
+                ballVerticalOffset = -25
             default:
                 break
+        }
+        
+        switch selectedServeForm {
+        case "Sidespin Pendulum":
+            paddleHorizontalPosition = 50
+        case "Backhand         ":
+            paddleHorizontalPosition = 300
+        default:
+            paddleHorizontalPosition = 100
+            break
         }
         
 
