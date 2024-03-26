@@ -10,6 +10,7 @@
 		BA4131412BB1192300EFB7C3 /* Table_Tennis_ServeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4131402BB1192300EFB7C3 /* Table_Tennis_ServeApp.swift */; };
 		BA4131432BB1192300EFB7C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4131422BB1192300EFB7C3 /* ContentView.swift */; };
 		BA4131452BB1192400EFB7C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4131442BB1192400EFB7C3 /* Assets.xcassets */; };
+		BABB1B8A2BB3183200E598C7 /* ColorPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB1B892BB3183200E598C7 /* ColorPickerPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		BA4131402BB1192300EFB7C3 /* Table_Tennis_ServeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table_Tennis_ServeApp.swift; sourceTree = "<group>"; };
 		BA4131422BB1192300EFB7C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BA4131442BB1192400EFB7C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BABB1B892BB3183200E598C7 /* ColorPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4131422BB1192300EFB7C3 /* ContentView.swift */,
+				BABB1B892BB3183200E598C7 /* ColorPickerPage.swift */,
 				BA4131402BB1192300EFB7C3 /* Table_Tennis_ServeApp.swift */,
 				BA4131442BB1192400EFB7C3 /* Assets.xcassets */,
 			);
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA4131432BB1192300EFB7C3 /* ContentView.swift in Sources */,
+				BABB1B8A2BB3183200E598C7 /* ColorPickerPage.swift in Sources */,
 				BA4131412BB1192300EFB7C3 /* Table_Tennis_ServeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

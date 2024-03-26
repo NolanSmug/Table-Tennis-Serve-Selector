@@ -1,7 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg width="64px" height="64px" viewBox="0 0 72 72" id="emoji" xmlns="http://www.w3.org/2000/svg" fill="#ef8631">
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier"> <g id="color"> <circle cx="36" cy="36.0001" r="28"/> </g> <g id="line"> <circle cx="36" cy="36.0001" r="28" fill="none" stroke="#000000" stroke-linejoin="round" stroke-width="2"/> </g> </g>
-</svg>
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 51.2 51.2" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs/>
+<g id="SVGRepo_iconCarrier" vectornator:layerName="SVGRepo_iconCarrier">
+<path d="M5.68889 25.6001C5.68889 14.6035 14.6034 5.68896 25.6 5.68896C36.5966 5.68896 45.5111 14.6035 45.5111 25.6001C45.5111 36.5967 36.5966 45.5112 25.6 45.5112C14.6034 45.5112 5.68889 36.5967 5.68889 25.6001Z" fill="#ff9e3d" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="circle"/>
+<path d="M5.68889 25.6001C5.68889 14.6035 14.6034 5.68896 25.6 5.68896C36.5966 5.68896 45.5111 14.6035 45.5111 25.6001C45.5111 36.5967 36.5966 45.5112 25.6 45.5112C14.6034 45.5112 5.68889 36.5967 5.68889 25.6001Z" fill="none" opacity="1" stroke="#131313" stroke-linecap="butt" stroke-linejoin="round" stroke-opacity="0.543688" stroke-width="0.5" vectornator:layerName="circle"/>
+</g>
+</svg>

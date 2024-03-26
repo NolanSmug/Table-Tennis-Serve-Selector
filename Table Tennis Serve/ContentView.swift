@@ -18,25 +18,36 @@ let SERVE_OPTIONS: [String: [String: [String]]] = [
     "Backhand         ": ["Short": SHORT_SERVE_OPTIONS, "Long": LONG_SERVE_OPTIONS]
 ]
 
+let defaultColor = Color(red: 255/255, green: 150/255, blue: 61/255)
+
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     
     @State private var selectedServe = ""
-    
-    // set image starter positions
     @State private var ballHorizontalOffset: CGFloat = 0
     @State private var ballVerticalOffset: CGFloat = 1000
-    
     @State private var paddleHorizontalPosition: CGFloat = 192
-    
+    @State private var showColorPicker = false
+    @State private var chosenColor = defaultColor
 
     var body: some View {
-        // dark mode support
         let tableImagePath = colorScheme == .dark ? "table-tennis-table-white" : "table-tennis-table"
         let paddleImagePath = colorScheme == .dark ? "paddle_white" : "paddle_black"
         
         VStack(alignment: .center, spacing: 12) {
-            Spacer()
+            HStack {
+                Spacer()
+                Button(action: openColorPickerPage) {
+                    Image(systemName: "paintpalette.fill")
+                        .font(.system(size: 28))
+                        .padding(.trailing, 20)
+                        .foregroundColor(chosenColor)
+                }
+            }
+            .sheet(isPresented: $showColorPicker) {
+                ColorPickerView(selectedColor: $chosenColor, showColorPicker: $showColorPicker)
+            }
+            
             HStack(spacing: 0) {
                 Image(tableImagePath)
                     .resizable()
@@ -54,26 +65,35 @@ struct ContentView: View {
             Image(paddleImagePath)
                 .resizable()
                 .scaledToFit()
-                .frame(width:75,height:75)
-                .position(x:paddleHorizontalPosition)
+                .frame(width: 75, height: 75)
+                .position(x: paddleHorizontalPosition)
+            
             Spacer()
+            
             HStack {
                 Text(selectedServe)
                     .font(Font.monospaced(.system(size: 18))())
                     .lineSpacing(4)
                     .padding(.horizontal, 16)
             }
+            
             Spacer()
+            
             Button(action: generateRandomServe) {
                 Text("Generate Random Serve")
                     .fontWeight(.bold)
+                    .font(.system(size: 24))
                     .padding(20)
                     .foregroundColor(Color.white)
-                    .background(Color(red: 255/255, green: 127/255, blue: 0/255))
+                    .background(Color(chosenColor))
                     .cornerRadius(10)
             }
-            .padding(.top, 10)
+            .padding(.bottom, 10)
         }
+    }
+    
+    func openColorPickerPage() {
+        self.showColorPicker = true
     }
 
     func generateRandomServe() {
@@ -98,9 +118,9 @@ struct ContentView: View {
         
         switch selectedServeDistance {
             case "Short":
-                ballVerticalOffset = 90
+                ballVerticalOffset = 80
             case "Long":
-                ballVerticalOffset = -25
+                ballVerticalOffset = -40
             default:
                 break
         }
