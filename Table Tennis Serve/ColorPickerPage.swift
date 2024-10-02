@@ -11,7 +11,7 @@ struct ColorPickerView: View {
     @Binding var selectedColor: Color
     @Binding var showColorPicker: Bool
     
-    let colors: [Color] = [.red, Color(red: 255/255, green: 150/255, blue: 61/255), .yellow, .green, .mint, .teal, .cyan, .blue, .indigo, .purple, .pink, .brown, .gray, .black, .white]
+    let colors: [Color] = [Color(red: 255/255, green: 150/255, blue: 61/255), .yellow, .green, .mint, .teal, .cyan, .blue, .indigo, .purple, .pink, .brown, .gray, .black, .white]
     
     var body: some View {
         VStack {
