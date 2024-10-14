@@ -1,46 +1,7 @@
-# Xcode
-DerivedData/
-build/
-*.xcworkspace
+# User-specific files
+xcuserdata/
 *.xcuserstate
-*.xcuserdatad/
-*.xcuserdata/
-*.plist
-*.pbxproj
-*.mode1v3
-*.mode2v3
-*.perspectivev3
 
-# Swift Package Manager
-Packages/
-.package.resolved
-
-# Cocoapods
-Pods/
-Podfile.lock
-
-# Carthage
-Carthage/Build/
-Carthage/Checkouts/
-
-# App-specific
-*.hmap
-*.dSYM.zip
-*.dSYM
-*.app
-
-# Documentation
-*.doccarchive
-
-# Logs
-*.log
-*.swp
-*.swo
-
-# Other
-*.DS_Store
-*.tmp
-*.lock
-*.user
-*.sublime-workspace
-*.sublime-project
+# Workspace settings
+xcdebugger/
+*.xcscmblueprint
