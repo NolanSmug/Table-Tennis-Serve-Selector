@@ -32,7 +32,7 @@ struct ServeDescriptionView: View {
     let serve: Serve
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 2) {
             DescriptionRow(title: "Form", value: serve.form)
             DescriptionRow(title: "Distance", value: serve.distance)
             DescriptionRow(title: "Spin", value: serve.spin)
@@ -71,6 +71,7 @@ struct DescriptionRow: View {
 struct ContentView: View {
     @StateObject private var gameState = GameState()
     @State private var showColorPicker = false
+    @State private var showTypeManager = false
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -78,7 +79,7 @@ struct ContentView: View {
         let paddleImagePath = colorScheme == .dark ? "paddle_white" : "paddle_black"
         
         VStack(alignment: .center, spacing: 12) {
-            // Top (Color Picker)
+            // Top (Color Picker and Type Manager)
             HStack {
                 Spacer()
                 Button(action: { showColorPicker = true }) {
@@ -86,11 +87,20 @@ struct ContentView: View {
                         .font(.system(size: 28))
                         .padding(.trailing, 20)
                         .foregroundColor(colorScheme == .dark && gameState.chosenColor == .black ? .white : gameState.chosenColor)
+                }.sheet(isPresented: $showColorPicker) {
+                    ColorPickerView(selectedColor: $gameState.chosenColor, showColorPicker: $showColorPicker)
+                }
+                
+                Button(action: { showTypeManager = true }) {
+                    Image(systemName: "gearshape.fill")
+                }.sheet(isPresented: $showTypeManager) {
+                    ServeManagerView(
+                        enabledServeTypes: $gameState.enabledServeTypes,
+                        enabledSpinTypes: $gameState.enabledSpinTypes
+                    )
                 }
             }
-            .sheet(isPresented: $showColorPicker) {
-                ColorPickerView(selectedColor: $gameState.chosenColor, showColorPicker: $showColorPicker)
-            }
+            
             
             // Middle
             HStack(spacing: 0) {
@@ -141,6 +151,66 @@ struct ContentView: View {
                     .cornerRadius(10)
             }
             .padding(.bottom, 10)
+        }
+    }
+}
+
+struct ServeTypeManagerView: View {
+    @Binding var enabledServeTypes: Set<String>
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(SERVE_TYPES, id: \.self) { type in
+                    Toggle(isOn: Binding(
+                        get: { self.enabledServeTypes.contains(type) },
+                        set: { isOn in
+                            if isOn {
+                                self.enabledServeTypes.insert(type)
+                            } else {
+                                self.enabledServeTypes.remove(type)
+                            }
+                        }
+                    )) {
+                        Text(type)
+                    }
+                }
+            }
+            .navigationBarTitle("Manage Serve Types", displayMode: .inline)
+            .navigationBarItems(trailing: Button("Done") {
+                presentationMode.wrappedValue.dismiss()
+            })
+        }
+    }
+}
+
+struct SpinTypeManagerView: View {
+    @Binding var enabledSpinTypes: Set<String>
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(SPIN_TYPES, id: \.self) { type in
+                    Toggle(isOn: Binding(
+                        get: { self.enabledSpinTypes.contains(type) },
+                        set: { isOn in
+                            if isOn {
+                                self.enabledSpinTypes.insert(type)
+                            } else {
+                                self.enabledSpinTypes.remove(type)
+                            }
+                        }
+                    )) {
+                        Text(type)
+                    }
+                }
+            }
+            .navigationBarTitle("Manage Spin Types", displayMode: .inline)
+            .navigationBarItems(trailing: Button("Done") {
+                presentationMode.wrappedValue.dismiss()
+            })
         }
     }
 }
